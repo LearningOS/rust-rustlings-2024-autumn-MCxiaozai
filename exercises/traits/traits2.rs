@@ -8,13 +8,21 @@
 //
 // Execute `rustlings hint traits2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
 
 trait AppendBar {
-    fn append_bar(self) -> Self;
+    fn append_bar(self) -> Vec<String>;
 }
 
 // TODO: Implement trait `AppendBar` for a vector of strings.
+impl AppendBar for  Vec<String> {
+    fn append_bar(self) -> Vec<String> {
+        let mut c=self;
+        let mut  d=vec![String::from("Bar")];
+        c.append(&mut d);
+        c
+    }
+}
 
 #[cfg(test)]
 mod tests {
